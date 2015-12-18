@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HasOffers actions</title>
+</head>
+<body>
+    <h1>HasOffers transaction ID to SubID conversion</h1>
+    <h3> Enter all transaction ids and hit submit.</h3>
+    <h3> Do not copy directly from excel but rather from notepad or similar.</h3>
+    <form method="post">
+      <textarea  type="text" name="hoid" rows="8" cols="40"></textarea>
+      <input type="submit" action="result" value="Just give me the subids"><input type="submit" action="source">
+    </form>
+    <h1>Get a list of all active HasOffer Offer Ids </h1>
+    <form method="get" action="active">
+      <button>Click Here</button>
+    </form>
+    <h1>Get a list of all active Advertisers in HasOffers with Security Token information </h1>
+    <form method="get" action="advertisers">
+      <button>Click Here</button>
+    </form>
+    <h1>Get a list of all converted LeadAds Offers </h1>
+    <form method="get" action="leadads">
+      <button>Click Here</button>
+    </form>
+</body>
