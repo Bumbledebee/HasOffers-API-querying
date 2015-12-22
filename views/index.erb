@@ -8,9 +8,13 @@
     <h1>HasOffers transaction ID to SubID conversion</h1>
     <h3> Enter all transaction ids and hit submit.</h3>
     <h3> Do not copy directly from excel but rather from notepad or similar.</h3>
-    <form method="post">
+    <form action="source" method="post">
       <textarea  type="text" name="hoid" rows="8" cols="40"></textarea>
-      <input type="submit" action="result" value="Just give me the subids"><input type="submit" action="source">
+      <input type="submit" method="post" action="result">
+    </form>
+    <form action="result" method="post">
+      <textarea  type="text" name="hoid" rows="8" cols="40"></textarea>
+      <input type="submit" value="Just give me the subids">
     </form>
     <h1>Get a list of all active HasOffer Offer Ids </h1>
     <form method="get" action="active">

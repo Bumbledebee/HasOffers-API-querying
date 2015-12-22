@@ -1,4 +1,5 @@
 require_relative './hoid_requester.rb'
+require_relative './query_impala.rb'
 require 'pry'
 
 class Result

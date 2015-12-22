@@ -6,9 +6,10 @@ require 'hoid_result'
 require 'active_offers'
 require 'leadads_offers'
 require 'find_advertiser'
+require 'query_impala'
 
 set :server, 'webrick'
-#set :bind, '10.90.30.35'
+set :bind, '10.90.30.35'
 
 get '/' do
   erb :index
@@ -36,7 +37,7 @@ post '/source' do
     text = "You did not enter anything."
   elsif  @hoid.lines.count > 1
     result = Result.new(@hoid).query_result
-    text = "Below you find the subids ready to copy past into your SQL query"
+    text = "Below you find the source of the subids"
   else
     result = Result.new(@hoid).ams_result
     text = "<h4> <a href='https://ams.fyber.com/support/search_user?search_type=subid&subid=<%= result %>' >View the Subid in AMS</a> or view below:</h4>"
@@ -61,4 +62,3 @@ get '/leadads' do
   text = "Below you find all Offers with approved conversion from LeadAds. Copy paste into excel and separate by ','"
   erb :result, :locals => { :result => result, :text => text}
 end
-
