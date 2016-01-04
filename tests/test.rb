@@ -46,7 +46,6 @@ class MainAppTest < Minitest::Test
     assert last_response.body.include?('Here is your result')
   end
 
-=begin
   def test_impala_query_from_hoids
     get "/result?hoid=102223104132378852151218\r\n10218921810614278852151218\r\n\102791652116178852151218"
     assert last_response.ok?
@@ -58,7 +57,6 @@ class MainAppTest < Minitest::Test
     assert last_response.ok?
     assert last_response.body.include?('Here is your result')
   end
-=end
 
   def test_displays_active_offers_call
     get '/active'

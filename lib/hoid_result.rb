@@ -41,14 +41,16 @@ class Result
         now = Date.today
         startdate = (now - 30).to_s
         enddate = now.to_s
+        puts subids
         query = "select toc.landing_page_id as lpid, a.id as appid, a.name as appname,
         count(*) as number_of_conversions
         from cms.applications_parquet as a
         join ids.track_offer_clicks_history_parquet toc on a.id = toc.application_id
         where toc.subid in (#{subids})
         and toc.created_at >= '2015-08-01' group by 1,2,3"
+        puts query
         result = Query.new(query,startdate,enddate)
-        result.run_query
+        result = result.run_query
       end
       result
   end
