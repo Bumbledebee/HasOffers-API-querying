@@ -52,7 +52,8 @@ class Result
         result = Query.new(query,startdate,enddate)
         result = result.run_query
       end
-      result
+      result = result.map{ |l| l.to_s+'</br>'}
+      result.*""
   end
 
 end
