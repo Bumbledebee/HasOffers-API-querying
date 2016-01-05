@@ -12,6 +12,10 @@ set :server, 'webrick'
 set :bind, '10.90.0.40'
 
 get '/' do
+  erb :public
+end
+
+get '/internal' do
   erb :index
 end
 

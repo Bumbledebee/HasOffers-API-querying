@@ -33,7 +33,7 @@ class Result
         subid << "'"+res+"'"+","
       end
       if subid == "'No subid',"
-        result = "No subid"
+        result = "No result"
       else
         l = subid.size
         l = l -2

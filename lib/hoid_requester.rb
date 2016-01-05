@@ -44,9 +44,9 @@ class Offer
 
   def get_format
     if res == "" || res.nil? || res == []
-      result = "No subid"
+      result = "No result"
     elsif res[0]["Stat"]["affiliate_info1"].size < 28
-      result = "No subid"
+      result = "No result"
     else
       result = res[0]["Stat"]["affiliate_info1"].insert(8, '-').insert(13, '-').insert(18, '-').insert(23, '-')
     end

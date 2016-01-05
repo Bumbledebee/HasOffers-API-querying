@@ -47,13 +47,13 @@ class MainAppTest < Minitest::Test
   end
 
   def test_impala_query_from_hoids
-    get "/result?hoid=102223104132378852151218\r\n10218921810614278852151218\r\n\102791652116178852151218"
+    post "/source?hoid=102223104132378852151218\r\n10218921810614278852151218\r\n\102791652116178852151218"
     assert last_response.ok?
     assert last_response.body.include?('Here is your result')
   end
 
-    def test_query_impala_offers
-    get '/myself?hoid=102223104132378852151218\r\n10218921810614278852151218\r\n\102791652116178852151218\r\n'
+    def test_impala_nonsense
+    post "/source?hoid=102223104132378852151218\r\n1asdfasdfsd\r\n\102791652116178852151218"
     assert last_response.ok?
     assert last_response.body.include?('Here is your result')
   end
