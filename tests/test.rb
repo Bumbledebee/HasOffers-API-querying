@@ -13,7 +13,7 @@ class MainAppTest < Minitest::Test
   def test_displays_main_page
     get '/'
     assert last_response.ok?
-    assert last_response.body.include?('HasOffers')
+    assert last_response.body.include?('Tune')
   end
 
   def test_enter_sdf_works

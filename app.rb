@@ -29,6 +29,15 @@ get '/internal' do
   erb :index
 end
 
+get '/ams' do
+  @hoid = params[:hoid]
+  result = Result.new(@hoid).ams_result
+  unless result == "No result"
+    text = "<h4> <a href='https://ams.fyber.com/support/search_user?search_type=subid&subid=#{result}' >View the Subid in AMS</a> or view below:</h4>"
+  end
+  erb :result, :locals => { :result => result, :text => text}
+end
+
 post '/result' do
   @hoid = params[:hoid]
   if  @hoid.lines.count > 1
